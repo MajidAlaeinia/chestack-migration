@@ -15,6 +15,12 @@ class CreateStacksTable extends Migration
     {
         Schema::create('stacks', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable(false);
+            $table->json('creators')->nullable(true);
+            $table->string('website')->nullable(true);
+            $table->string('logo')->nullable(true);
+            $table->timestamp('released_at');
+            $table->timestamp('deprecated_at');
             $table->timestamps();
         });
     }

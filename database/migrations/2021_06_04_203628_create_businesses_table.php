@@ -15,7 +15,11 @@ class CreateBusinessesTable extends Migration
     {
         Schema::create('businesses', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable(false);
+            $table->string('website')->nullable(false);
+            $table->string('logo')->nullable(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

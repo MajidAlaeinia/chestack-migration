@@ -15,6 +15,10 @@ class CreateUserBusinessTable extends Migration
     {
         Schema::create('user_business', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('business_id');
+            $table->foreign('business_id')->references('id')->on('businesses');
             $table->timestamps();
         });
     }
