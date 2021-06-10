@@ -16,9 +16,9 @@ class CreateStackTagTable extends Migration
         Schema::create('stack_tag', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('stack_id');
-            $table->foreign('stack_id')->references('id')->on('stacks');
+            $table->foreign('stack_id')->references('id')->on('stack');
             $table->unsignedBigInteger('tag_id');
-            $table->foreign('tag_id')->references('id')->on('tags');
+            $table->foreign('tag_id')->references('id')->on('tag');
             $table->timestamps();
         });
     }

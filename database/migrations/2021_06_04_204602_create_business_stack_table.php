@@ -16,9 +16,9 @@ class CreateBusinessStackTable extends Migration
         Schema::create('business_stack', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('business_id');
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreign('business_id')->references('id')->on('business');
             $table->unsignedBigInteger('stack_id');
-            $table->foreign('stack_id')->references('id')->on('stacks');
+            $table->foreign('stack_id')->references('id')->on('stack');
             $table->timestamps();
         });
     }

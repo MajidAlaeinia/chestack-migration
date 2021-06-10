@@ -13,12 +13,12 @@ class CreateUserBusinessTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_business', function (Blueprint $table) {
+        Schema::create('business_user', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('business_id');
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreign('business_id')->references('id')->on('business');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('user');
             $table->timestamps();
         });
     }

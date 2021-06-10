@@ -13,7 +13,7 @@ class CreateBusinessesTable extends Migration
      */
     public function up()
     {
-        Schema::create('businesses', function (Blueprint $table) {
+        Schema::create('business', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
             $table->string('website')->nullable(false);

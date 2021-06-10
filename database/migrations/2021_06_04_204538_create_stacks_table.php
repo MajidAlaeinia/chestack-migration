@@ -13,7 +13,7 @@ class CreateStacksTable extends Migration
      */
     public function up()
     {
-        Schema::create('stacks', function (Blueprint $table) {
+        Schema::create('stack', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
             $table->json('creators')->nullable(true);
